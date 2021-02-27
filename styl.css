@@ -1,0 +1,144 @@
+body {
+  background-color: rgb(34, 34, 34);
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+
+header {
+  margin-top: 100px;
+  width: 400px;
+  height: 70px;
+  background-color: #264d1a;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.select {
+  padding: 5px 5px;
+  color: #333333;
+  background-color: #eeeeee;
+  border: 1px solid #dddddd;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: 700;
+}
+.select:focus,
+.select:hover {
+  outline: none;
+}
+.select option {
+  font-weight: 700;
+}
+.info {
+  display: flex;
+  align-items: center;
+}
+
+.info > p {
+  color: white;
+  margin-right: 20px;
+  font-size: 22px;
+}
+
+.icon {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+#flag_svg {
+  fill: rgb(250, 7, 7);
+}
+
+#clock_svg {
+  fill: yellow;
+}
+
+#reload {
+  fill: white;
+}
+
+main {
+  width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  user-select: none;
+  background-color: rgb(52, 167, 52);
+}
+
+main div {
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+main div.darker {
+  background-color: green;
+}
+main div.darker.revealed {
+  background-color: rgb(187, 186, 186);
+}
+main div.brighter {
+  background-color: rgb(28, 150, 28);
+}
+main div.brighter.revealed {
+  background-color: rgb(196, 196, 196);
+}
+
+main .revealed.one {
+  color: blue;
+}
+
+main .revealed.two {
+  color: rgb(170, 159, 3);
+}
+
+main .revealed.three {
+  color: rgb(172, 0, 115);
+}
+
+main .revealed.four {
+  color: rgb(209, 0, 0);
+}
+
+main .revealed.five {
+  color: rgb(0, 160, 13);
+}
+
+main .revealed.more {
+  color: black;
+}
+
+main div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main#board div.flagged {
+  content: url("img/flag.svg");
+}
+
+main#board .empty:hover {
+  background-color: rgba(220, 220, 220, 0.329);
+}
+
+.score {
+  font-size: 40px;
+  margin-top: 20px;
+  text-align: center;
+  color: green;
+  text-transform: uppercase;
+}
+
+.score.loose {
+  color: rgb(181, 10, 10);
+}
+
+#reload {
+  cursor: pointer;
+}
