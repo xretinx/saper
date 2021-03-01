@@ -223,11 +223,7 @@ function showCount(index) {
   }
 }
 function endOfGame(score) {
-  if (score == "win") document.querySelector(".score").innerText = "wygrałeś!";
-  else {
-    document.querySelector(".score").innerText = "przegrałeś!";
-    document.querySelector(".score").classList.add("loose");
-  }
+  scoreSlide(score);
   document.querySelector("#board").style.pointerEvents = "none";
   clearInterval(timeInterval);
 }
@@ -292,4 +288,26 @@ function changeBoard() {
   document.querySelector("#time_counter").innerText = 0;
   time = 0;
   firstClick = false;
+}
+/* LAST SCREEN ANIMATION */
+function scoreSlide(state) {
+  document.querySelector("#dimmer").style.display = "block";
+  document.querySelector(".endPage").classList.add("active");
+  document.querySelector(".zagraj.info").style.visibility = "visible";
+  if (state == "win") {
+    document.querySelector("#timeScore").innerText = time;
+    document.querySelector(".wynikWin").style.display = "block";
+  } else {
+    document.querySelector(".wynikLoose").style.display = "block";
+  }
+  document.querySelector(".zagraj.info").addEventListener("click", newGame);
+}
+function newGame() {
+  document.querySelector(".zagraj.info").removeEventListener("click", newGame);
+  document.querySelector(".zagraj.info").style.visibility = "hidden";
+  document.querySelector(".wynikWin").style.display = "none";
+  document.querySelector(".wynikLoose").style.display = "none";
+  document.querySelector("#dimmer").style.display = "none";
+  document.querySelector(".endPage").classList.remove("active");
+  changeBoard(currentMode);
 }
